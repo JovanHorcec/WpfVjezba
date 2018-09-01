@@ -14,8 +14,8 @@ namespace Wpf_Vjezba
             {
                 Ime = "Milica",
                 Prezime = "Krmpotić",
-                Godine = 33,
-                Redovan = false
+                Godine = 40,
+                Redovan = true
             };
         }
 

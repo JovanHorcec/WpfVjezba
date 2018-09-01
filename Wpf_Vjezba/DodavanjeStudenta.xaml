@@ -19,6 +19,12 @@
         <Style TargetType="Button" x:Key="btnNumeric">
             <Setter Property="Height" Value="20"/>
             <Setter Property="Width" Value="20"/>
+            <Setter Property="Background" Value="{StaticResource brushSekundarni}"/>
+        </Style>
+        <Style TargetType="Button">
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="Padding" Value="10"/>
+            <Setter Property="Background" Value="{StaticResource brushSekundarni}"/>
         </Style>
     </Window.Resources>
     <Grid>
@@ -36,20 +42,20 @@
         </Grid.ColumnDefinitions>
 
         <Label Content="Ime:" Grid.Row="0" Grid.Column="0"/>
-        <TextBox Grid.Row="0" Grid.Column="1"/>
+        <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding Ime}"/>
         <Label Content="Prezime:" Grid.Row="1" Grid.Column="0"/>
-        <TextBox Grid.Row="1" Grid.Column="1"/>
+        <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Prezime}"/>
         <Label Content="Godine:" Grid.Row="2" Grid.Column="0"/>
         <StackPanel Grid.Row="2" Grid.Column="1" Orientation="Horizontal">
-            <Button Content="^" Style="{StaticResource btnNumeric}"/>
-            <Label Content="33"/>
-            <Button Content="v" Style="{StaticResource btnNumeric}"/>
+            <Button Content="^" Style="{StaticResource btnNumeric}" Name="btnPovecaj" Click="btnPovecaj_Click"/>
+            <Label Content="{Binding Godine}"/>
+            <Button Content="v" Style="{StaticResource btnNumeric}" Name="btnSmanji" Click="btnSmanji_Click"/>
         </StackPanel>
         <Label Content="Redovan:" Grid.Row="3" Grid.Column="0"/>
-        <CheckBox Grid.Row="3" Grid.Column="1" VerticalAlignment="Center" />
+        <CheckBox Grid.Row="3" Grid.Column="1" VerticalAlignment="Center" IsChecked="{Binding Redovan}"/>
         <StackPanel Grid.Row="4" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right">
-            <Button Content="Potvrdi"/>
-            <Button Content="Odustani"/>
+            <Button Content="Potvrdi" Name="btnPotvrdi" Click="btnPotvrdi_Click"/>
+            <Button Content="Odustani" Name="btnOdustani" Click="btnOdustani_Click"/>
         </StackPanel>
     </Grid>
 </Window>

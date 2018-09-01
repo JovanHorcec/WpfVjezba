@@ -2,11 +2,24 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:Wpf_Vjezba"
-             StartupUri="DodavanjeStudenta.xaml">
+             StartupUri="MainWindow.xaml">
     <Application.Resources>
         <LinearGradientBrush x:Key="brushGlavni" StartPoint="0 0.5" EndPoint="1 0.5">
             <GradientStop Offset="0" Color="DarkMagenta"/>
             <GradientStop Offset="1" Color="Black"/>
         </LinearGradientBrush>
+        
+        <LinearGradientBrush x:Key="brushSekundarni">
+            <GradientStop Offset="0" Color="White"/>
+            <GradientStop Offset="1" Color="Cyan"/>
+        </LinearGradientBrush>
+        <RadialGradientBrush x:Key="brushRedovan">
+            <GradientStop Offset="0" Color="DarkMagenta"/>
+            <GradientStop Offset="1" Color="Black"/>
+        </RadialGradientBrush>
+        <RadialGradientBrush x:Key="brushIzvanredan">
+            <GradientStop Offset="0" Color="DarkRed"/>
+            <GradientStop Offset="1" Color="Black"/>
+        </RadialGradientBrush>
     </Application.Resources>
 </Application>

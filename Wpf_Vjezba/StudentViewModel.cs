@@ -9,13 +9,13 @@ namespace Wpf_Vjezba
 {
     class StudentViewModel : INotifyPropertyChanged
     {
-        private Student student;
+        public Student Student { get; }
 
         public event PropertyChangedEventHandler PropertyChanged;
 
         public StudentViewModel(Student student)
         {
-            this.student = student;
+            this.Student = student;
         }
         
 
@@ -23,11 +23,11 @@ namespace Wpf_Vjezba
         {
             get
             {
-                return student.Ime;
+                return Student.Ime;
             }
             set
             {
-                student.Ime = value;
+                Student.Ime = value;
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Ime)));
             }
 
@@ -37,11 +37,11 @@ namespace Wpf_Vjezba
         {
             get
             {
-                return student.Prezime;
+                return Student.Prezime;
             }
             set
             {
-                student.Prezime = value;
+                Student.Prezime = value;
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Prezime)));
             }
 
@@ -51,12 +51,18 @@ namespace Wpf_Vjezba
         {
             get
             {
-                return student.Godine;
+                return Student.Godine;
             }
             set
             {
-                student.Godine = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Godine)));
+                
+                if (value >= 10 && value <= 100)
+                {
+                    Student.Godine = value;
+
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Godine)));
+                }
+
             }
 
         }
@@ -65,11 +71,11 @@ namespace Wpf_Vjezba
         {
             get
             {
-                return student.Redovan;
+                return Student.Redovan;
             }
             set
             {
-                student.Redovan = value;
+                Student.Redovan = value;
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Redovan)));
             }
 

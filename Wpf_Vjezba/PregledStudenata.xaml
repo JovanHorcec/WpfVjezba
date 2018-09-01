@@ -1,0 +1,81 @@
+﻿<Window x:Class="Wpf_Vjezba.PregledStudenata"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Wpf_Vjezba"
+        mc:Ignorable="d"
+        Title="PregledStudenata" Height="600" Width="600" Background="DarkGray">
+
+    <Window.Resources>
+        <Style TargetType="Label">
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Width" Value="125"/>
+            <Setter Property="Height" Value="125"/>
+            <Setter Property="Margin" Value="25"/>
+            <Setter Property="Template">
+                
+                <Setter.Value>
+                    <ControlTemplate TargetType="Label">
+                        <Grid Background="{TemplateBinding Background}">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="auto"/>
+                            </Grid.RowDefinitions>
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            <StackPanel Grid.Row="1" VerticalAlignment="Center" Height="0" Name="piramida">
+                                <Rectangle Width="10" 
+                                           Height="5"
+                                           Fill="{StaticResource brushSekundarni}"/>
+                                <Rectangle Width="20" 
+                                           Height="5"
+                                           Fill="{StaticResource brushSekundarni}"/>
+                                <Rectangle Width="30" 
+                                           Height="5"
+                                           Fill="{StaticResource brushSekundarni}"/>
+                                <Rectangle Width="40" 
+                                           Height="5"
+                                           Fill="{StaticResource brushSekundarni}"/>
+                                <Rectangle Width="50" 
+                                           Height="5"
+                                           Fill="{StaticResource brushSekundarni}"/>
+                            </StackPanel>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <EventTrigger RoutedEvent="Loaded">
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation From="0" To="1" RepeatBehavior="Forever"
+                                                         AutoReverse="True" Storyboard.TargetProperty="Background.GradientStops[0].Offset"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+                            <EventTrigger RoutedEvent="MouseEnter">
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation From="0" To="50" 
+                                                         Storyboard.TargetName="piramida"
+                                                         Storyboard.TargetProperty="Height"
+                                                         Duration="0:0:0.2"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+                            <EventTrigger RoutedEvent="MouseLeave">
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation From="50" To="0" 
+                                                         Storyboard.TargetName="piramida"
+                                                         Storyboard.TargetProperty="Height"
+                                                         Duration="0:0:0.2"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+    <WrapPanel Name="pnlStudenti" Orientation="Vertical"/>
+
+</Window>

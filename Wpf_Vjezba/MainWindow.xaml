@@ -27,10 +27,10 @@
         </Style>
     </Window.Resources>
     <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
-        <Button Content="Dodavanje studenta"/>
-        <Button Content="Pregled studenata"/>
-        <Button Content="Planer"/>
-        <Button Content="Izlaz"/>
+        <Button Content="Dodavanje studenta" Name="btnDodavanjeStudenta" Click="btnDodavanjeStudenta_Click"/>
+        <Button Content="Pregled studenata" Name="btnPregledStudenata" Click="btnPregledStudenata_Click"/>
+        <Button Content="Planer" Name="btnPlaner" Click="btnPlaner_Click"/>
+        <Button Content="Izlaz" Name="btnIzlaz" Click="btnIzlaz_Click"/>
     </StackPanel>
     
 </Window>

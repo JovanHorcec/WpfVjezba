@@ -57,6 +57,13 @@
     <Compile Include="DodavanjeStudenta.xaml.cs">
       <DependentUpon>DodavanjeStudenta.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Planer.xaml.cs">
+      <DependentUpon>Planer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PregledStudenata.xaml.cs">
+      <DependentUpon>PregledStudenata.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Repo.cs" />
     <Compile Include="Student.cs" />
     <Compile Include="StudentService.cs" />
     <Compile Include="StudentViewModel.cs" />
@@ -76,6 +83,14 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Planer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PregledStudenata.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
