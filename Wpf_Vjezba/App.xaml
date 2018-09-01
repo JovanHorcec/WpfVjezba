@@ -1,0 +1,12 @@
+﻿<Application x:Class="Wpf_Vjezba.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:Wpf_Vjezba"
+             StartupUri="DodavanjeStudenta.xaml">
+    <Application.Resources>
+        <LinearGradientBrush x:Key="brushGlavni" StartPoint="0 0.5" EndPoint="1 0.5">
+            <GradientStop Offset="0" Color="DarkMagenta"/>
+            <GradientStop Offset="1" Color="Black"/>
+        </LinearGradientBrush>
+    </Application.Resources>
+</Application>
